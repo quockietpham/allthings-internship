@@ -57,7 +57,7 @@ function createTheNewEmployee() {
   }
 
 
-  // if (!isValid) return alert("Biểu mẫu điền không hợp lệ");
+  if (!isValid) return alert("Biểu mẫu điền không hợp lệ");
 
   var newEmployee = new Employee(
     userName.value,
