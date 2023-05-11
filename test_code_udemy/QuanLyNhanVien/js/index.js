@@ -81,8 +81,8 @@ function removeRow(button) {
   if (confirm("Are you sure you want to delete this User?")) {
     let row = button.parentNode.parentNode; 
     row.parentNode.removeChild(row); 
-    let k = row.cells[0].textContent
-    let index = allNameEmployees.findIndex(obj => obj.accValue == k);
+    let employeeId = row.cells[0].textContent
+    let index = allNameEmployees.findIndex(obj => obj.accValue == employeeId);
     if (index !== -1) {
       allNameEmployees.splice(index, 1);
     }
@@ -106,20 +106,22 @@ function editRow(button) {
   document.getElementById("luongCB").value =  updatedEmployee.luongCB
   document.getElementById("chucvu").value =  updatedEmployee.chucvuValue
   document.getElementById("gioLam").value =  updatedEmployee.gioLamValue
-  
   update()
   
   
   };  
-let updateButton = document.getElementById("btnCapNhat")
-updateButton.addEventListener("click", function(ne) {    
+document.getElementById("btnCapNhat").addEventListener("click", updateButton)
+function updateButton() {
 
-  row.cells[1].innerHTML = document.getElementById("name").value
-  row.cells[2].innerHTML = document.getElementById("email").value
-  row.cells[3].innerHTML = document.getElementById("datepicker").value
-  row.cells[4].innerHTML = document.getElementById("chucvu").value
-  row.cells[5].innerHTML = document.getElementById("luongCB").value * document.getElementById("gioLam").value          
-})
+}    
+
+  // row.cells[1].innerHTML = document.getElementById("name").value
+  // console.log("rowwwwww",row)
+  // row.cells[2].innerHTML = document.getElementById("email").value
+  // row.cells[3].innerHTML = document.getElementById("datepicker").value
+  // row.cells[4].innerHTML = document.getElementById("chucvu").value
+  // row.cells[5].innerHTML = document.getElementById("luongCB").value * document.getElementById("gioLam").value          
+
 
 
 document.getElementById("btnThemNV").addEventListener("click", themNVClick);
@@ -161,60 +163,6 @@ function themNVClick(nene) {
     }
   }
 
-// function delButton() {
-
-// }
-// deleteButton.addEventListener("click", function() {
-    
-//     if (confirm("Are you sure you want to delete this User?")) {
-//       let index = allNameEmployees.indexOf(cell1);
-//       if (index > -1) {
-//           allNameEmployees.splice(index, 1);
-//       }
-//       newRow.remove();
-//       console.log("-----ALLDEL", allNameEmployees)
-//       }
-//       });
-//   // event for edit button
-// editButton.accValue = accValue
-// editButton.addEventListener("click", function(e) {
-//   editButton.setAttribute("data-toggle", "modal");
-//   editButton.setAttribute("data-target", "#myModal");
-//   let row = this.parentNode.parentNode
-  
-//   let employeeId =  e.srcElement.accValue
-
-//   let updatedEmployees = allNameEmployees.filter(em => em.accValue === employeeId)
-
-//   let updatedEmployee = updatedEmployees[0]
-
-//   document.getElementById("tknv").value = updatedEmployee.accValue
-//   document.getElementById("name").value =  updatedEmployee.nameValue
-//   document.getElementById("email").value =  updatedEmployee.emailValue
-//   document.getElementById("datepicker").value =  updatedEmployee.dateworkValue
-//   document.getElementById("password").value =  updatedEmployee.pwdValue
-//   document.getElementById("luongCB").value =  updatedEmployee.luongCB
-//   document.getElementById("chucvu").value =  updatedEmployee.chucvuValue
-//   document.getElementById("gioLam").value =  updatedEmployee.gioLamValue
-  
-//   update()
-  
-//   let updateButton = document.getElementById("btnCapNhat")
-//   updateButton.addEventListener("click", function(ne) {    
-  
-//     row.cells[1].innerHTML = document.getElementById("name").value
-//     row.cells[2].innerHTML = document.getElementById("email").value
-//     row.cells[3].innerHTML = document.getElementById("datepicker").value
-//     row.cells[4].innerHTML = document.getElementById("chucvu").value
-//     row.cells[5].innerHTML = document.getElementById("luongCB").value * document.getElementById("gioLam").value          
-//   })
-//   });  
-    
-      
-      
-      
-      
-      
 document.getElementById("btnLuu").onclick = function() {
   let table = document.getElementById("tableDanhSach");
   let tableData = [];
@@ -304,16 +252,8 @@ function xuLyFile(e) {
           document.getElementById("gioLam").value =  updatedEmployee.gioLamValue
           
           update()
-          
-          let updateButton = document.getElementById("btnCapNhat")
-          updateButton.addEventListener("click", function(ne) {    
-            
-            row.cells[1].innerHTML = document.getElementById("name").value
-            row.cells[2].innerHTML = document.getElementById("email").value
-            row.cells[3].innerHTML = document.getElementById("datepicker").value
-            row.cells[4].innerHTML = document.getElementById("chucvu").value
-            row.cells[5].innerHTML = document.getElementById("luongCB").value * document.getElementById("gioLam").value          
-          })
+    
+     
           });  
     //*end Editbutton
   }
