@@ -208,8 +208,7 @@ function xuLyFile(e) {
     let accValue = employeesUpload[i]['accValue']
     
     let nameValue = employeesUpload[i]['nameValue']
-    let emailValue = employeesUpload[i]['emailValue']
-    console.log("maiamia", emailValue)
+    let emailValue = employeesUpload[i]['mailValue']
     let dateworkValue = employeesUpload[i]['dateworkValue']
     let pwdValue = employeesUpload[i]['pwdValue']
     let luongCB = employeesUpload[i]['luongCB']
